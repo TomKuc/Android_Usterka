@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".ui.newSubmission.NewSubmissionFragment">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <!-- Submission Ticket -->
+            <LinearLayout
+                android:id="@+id/new_submission_ticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/white_rounded_background"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <!-- Submission title -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/title_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:hint="@string/new_submission_hint_text"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/light_blue"
+                    app:errorTextColor="@color/list_item_deleted"
+                    app:hintTextColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/title_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="0dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="5dp"
+                        android:textCursorDrawable="@drawable/new_submission_edit_text_cursor"
+                        android:textSize="16sp"
+                        tools:ignore="TextContrastCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Submission description -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/descrition_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:hint="@string/new_submission_hint_description"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/light_blue"
+                    app:hintTextColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="0dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="5dp"
+                        android:textCursorDrawable="@drawable/new_submission_edit_text_cursor"
+                        android:textSize="16sp"
+                        tools:ignore="TextContrastCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Date and time picker -->
+                <RelativeLayout
+                    android:id="@+id/date_and_time_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionField">
+
+                    <!-- Cell title -->
+                    <TextView
+                        android:id="@+id/textView_date_and_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/new_submission_hint_date"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <!-- Buttons -->
+                    <RelativeLayout
+                        android:id="@+id/date_and_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_date_and_time"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/button_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minHeight="0dp"
+                            android:text="@string/new_submission_button_date"
+                            android:textColor="@color/black"
+                            app:backgroundTint="@color/silver"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <Button
+                            android:id="@+id/button_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/button_date"
+                            android:minHeight="0dp"
+                            android:text="@string/new_submission_button_hour"
+                            android:textColor="@color/black"
+                            app:backgroundTint="@color/light_gray"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </RelativeLayout>
+
+                    <!-- Horizontal line -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/date_and_time"
+                        android:layout_marginTop="2dp"
+                        android:background="@android:color/darker_gray" />
+
+                </RelativeLayout>
+
+
+                <!-- Department -->
+                <RelativeLayout
+                    android:id="@+id/department_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/date_and_time_cell">
+
+                    <TextView
+                        android:id="@+id/department_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/new_submission_hint_department"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/department_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/department_title"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/new_submission_hint_department"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/department_text"
+                        android:layout_marginTop="2dp"
+                        android:background="@android:color/darker_gray" />
+
+                </RelativeLayout>
+
+                <!-- Place -->
+                <RelativeLayout
+                    android:id="@+id/place_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/date_and_time_cell">
+
+                    <TextView
+                        android:id="@+id/place_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/submission_title_place"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/place_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/place_title"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/place_picker_title"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/place_text"
+                        android:layout_marginTop="2dp"
+                        android:background="@android:color/darker_gray" />
+
+                </RelativeLayout>
+
+                <!-- Image -->
+                <RelativeLayout
+                    android:id="@+id/image_cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/place_cell">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/image_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/new_submission_hint_photo"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <!-- Buttons -->
+                    <RelativeLayout
+                        android:id="@+id/image_buttons_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/image_title"
+                        android:orientation="horizontal">
+
+                        <!-- Gallery button -->
+                        <ImageButton
+                            android:id="@+id/add_image_from_gallery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/image_contentDescription"
+                            android:src="@drawable/ic_new_submission_gallery_image" />
+
+                        <!-- Camera button -->
+                        <ImageButton
+                            android:id="@+id/add_image_from_camera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/add_image_from_gallery"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/image_contentDescription"
+                            android:src="@drawable/ic_new_submission_camera_image" />
+
+                    </RelativeLayout>
+
+                    <!-- Image preview -->
+                    <RelativeLayout
+                        android:id="@+id/image_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/image_buttons_container"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <!-- Image -->
+                        <ImageView
+                            android:id="@+id/image_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:contentDescription="@string/image_contentDescription" />
+
+                        <!-- Delete button -->
+                        <ImageButton
+                            android:id="@+id/delete_image_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/image_contentDescription"
+                            android:src="@drawable/ic_new_submission_delete_image" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!-- Send buttons -->
+            <LinearLayout
+                android:id="@+id/send_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:paddingVertical="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+                <!--             android:background="@drawable/white_rounded_background"-->
+
+                <Button
+                    android:id="@+id/send_submission_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/new_submission_send_button_background"
+                    android:enabled="false"
+                    android:text="@string/new_submission_button_send"
+                    android:textColor="@color/blue"
+                    app:backgroundTint="@null"
+                    tools:ignore="TextContrastCheck" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@android:color/darker_gray"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/send_submission_anonymously_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/new_submission_send_button_background"
+                    android:enabled="false"
+                    android:text="@string/new_submission_button_send_anonymously"
+                    android:textColor="@color/blue"
+                    app:backgroundTint="@null"
+                    tools:ignore="TextContrastCheck" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

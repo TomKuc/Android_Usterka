@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Usterka</string>
+    <string name="new_submission_frame_title">"Zgłoszenie"</string>
+    <string name="my_submissions_frame_title">Moje</string>
+    <string name="all_submissions_frame_title">Wszystkie</string>
+
+    <!-- Strings related to navigation menu -->
+    <string name="report_submission_menu_title">Zgłoś zagrożenie</string>
+    <string name="my_submissions_menu_title">Moje zgłoszenia</string>
+    <string name="all_submissions_menu_title">Wszystkie zgłoszenia</string>
+    <string name="logout_message">Czy na pewno chcesz się wylogować ?</string>
+
+    <!-- Common strings -->
+    <string name="yes_message">Tak</string>
+    <string name="no_message">Nie</string>
+    <string name="ok_message">OK</string>
+    <string name="system">Android</string>
+    <string name="server_issue_dialog_title">Problem z serwerem</string>
+    <string name="server_issue_dialog_message">Prosimy o kontakt z administratorem</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_password">Hasło</string>
+    <string name="action_login">Zaloguj</string>
+    <string name="remember_me_switch_text">Zapamiętaj mnie</string>
+    <string name="empty_email_textView">Niepoprawny format adresu email</string>
+    <string name="empty_password_textView">Hasło nie może być puste</string>
+    <string name="incorrect_login_credentials">Email lub hasło nieprawidłowe</string>
+
+    <!-- Strings related to new submission frame -->
+    <string name="new_submission_hint_text">Tytuł</string>
+    <string name="new_submission_hint_description">Opis</string>
+    <string name="new_submission_hint_date">Data i godzina</string>
+    <string name="new_submission_button_date">Data</string>
+    <string name="new_submission_button_hour">Godzina</string>
+    <string name="new_submission_hint_department">Dział zgłaszającego</string>
+    <string name="submission_title_place">Miejsce</string>
+    <string name="new_submission_hint_photo">Zdjęcie</string>
+    <string name="new_submission_button_send">Wyślij</string>
+    <string name="new_submission_button_send_anonymously">Wyślij anonimowo</string>
+    <string name="image_contentDescription">image added to submission</string>
+    <string name="place_picker_title">Wybierz miejsce</string>
+    <string name="place_picker_previous_place_text">Poprzednie miejsce</string>
+    <string name="new_submission_title_error_text">Tytuł jest za krótki!</string>
+    <string name="new_submission_description_error_text">Opis jest za krótki!</string>
+    <string name="new_submission_place_error_text">Nie wybrano miejsca!</string>
+    <string name="new_submission_button_send_message_succes">Zgłoszenie zostało wysłane</string>
+    <string name="new_submission_button_send_message_fail">Zgłoszenie nie zostało wysłane</string>
+
+    <!-- Strings related to submission status list-->
+    <string name="reported">Zgłoszone</string>
+    <string name="accepted">Przyjęte</string>
+    <string name="in_progress">Realizowane</string>
+    <string name="finished">Zakończone</string>
+    <string name="suspended">Zawieszone</string>
+    <string name="deleted">Usunięte</string>
+
+    <!-- Strings related to submissions list-->
+    <string name="submissions_list_no_submissions_with_status_found">Nie ma zgłoszeń o wybranym statusie</string>
+
+    <!-- Strings related to submission view -->
+    <string name="submission_view_title">Moje zgłoszenie</string>
+    <string name="all_submission_view_title">Zgłoszenie</string>
+    <string name="anonymous_submission_department_text">Brak danych</string>
+    <string name="submission_source_name">Aplikacja mobilna</string>
+
+    <!--    Strings related to progressBar -->
+    <string name="login_screen_progress_bar_text">Trwa logowanie</string>
+    <string name="new_submission_progress_bar_text">Wysyłanie zgłoszenia</string>
+    <string name="new_submission_image_progress_bar_text">Trwa upload zdjęcia</string>
+    <string name="submission_list_progress_bar_text">Trwa pobieranie zgłoszeń</string>
+
+
+</resources>

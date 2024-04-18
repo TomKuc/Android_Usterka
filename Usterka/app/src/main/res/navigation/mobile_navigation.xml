@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    android:label="@string/my_submissions_frame_title"
+    app:startDestination="@id/newSubmission">
+    <fragment
+        android:id="@+id/newSubmission"
+        android:name="com.ardgahgroup.usterka.ui.newSubmission.NewSubmissionFragment"
+        android:label="@string/new_submission_frame_title"
+        tools:layout="@layout/fragment_new_submission">
+        <action
+            android:id="@+id/action_newSubmission_to_selectPlaceFragment"
+            app:destination="@id/selectPlaceFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_newSubmission_to_wrongSendNotificationFragment"
+            app:destination="@id/SendNotificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySubmissions"
+        android:name="com.ardgahgroup.usterka.ui.statusesList.mySubmissions.MySubmissionsStatusesListFragment"
+        android:label="@string/my_submissions_frame_title"
+        tools:layout="@layout/fragment_my_submissions">
+        <action
+            android:id="@+id/action_mySubmissionsStatuses_to_mySubmissionsWithStatusList"
+            app:destination="@id/mySubmissionsWithStatusList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mySubmissionsWithStatusList"
+        android:name="com.ardgahgroup.usterka.ui.submissionsList.mySubmissions.SubmissionsListFragment"
+        android:label="@string/my_submissions_frame_title"
+        tools:layout="@layout/fragment_submissions_list">
+        <action
+            android:id="@+id/action_mySubmissionsWithStatusList_to_mySubmissionView"
+            app:destination="@id/mySubmissionView" />
+        <action
+            android:id="@+id/action_mySubmissionsWithStatusList_to_mySubmissionsStatuses"
+            app:destination="@id/mySubmissions" />
+        <argument
+            android:name="statusName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mySubmissionView"
+        android:name="com.ardgahgroup.usterka.ui.submissionView.mySubmissionView.SubmissionViewFragment"
+        android:label="@string/submission_view_title"
+        tools:layout="@layout/fragment_submission_view">
+        <action
+            android:id="@+id/action_mySubmissionView_to_mySubmissionsWithStatusList"
+            app:destination="@id/mySubmissionsWithStatusList" />
+        <argument
+            android:name="notificationId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allSubmissions"
+        android:name="com.ardgahgroup.usterka.ui.statusesList.allSubmissions.AllSubmissionsStatusesListFragment"
+        android:label="@string/all_submissions_frame_title"
+        tools:layout="@layout/fragment_all_submissions">
+        <action
+            android:id="@+id/action_allSubmissions_to_allSubmissionsListFragment"
+            app:destination="@id/allSubmissionsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectPlaceFragment"
+        android:name="com.ardgahgroup.usterka.ui.newSubmission.selectPlace.SelectPlaceFragment"
+        android:label="@string/place_picker_title"
+        tools:layout="@layout/fragment_select_place">
+        <action
+            android:id="@+id/action_selectPlaceFragment_to_newSubmission"
+            app:destination="@id/newSubmission"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/allSubmissionsListFragment"
+        android:name="com.ardgahgroup.usterka.ui.submissionsList.allSubmissions.AllSubmissionsListFragment"
+        android:label="@string/all_submissions_frame_title"
+        tools:layout="@layout/fragment_all_submissions_list">
+        <action
+            android:id="@+id/action_allSubmissionsListFragment_to_allSubmissions"
+            app:destination="@id/allSubmissions" />
+        <action
+            android:id="@+id/action_allSubmissionsListFragment_to_allSubmissionViewFragment"
+            app:destination="@id/allSubmissionViewFragment" />
+        <argument
+            android:name="statusName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/allSubmissionViewFragment"
+        android:name="com.ardgahgroup.usterka.ui.submissionView.allSubmissionView.AllSubmissionViewFragment"
+        android:label="@string/all_submission_view_title"
+        tools:layout="@layout/fragment_all_submission_view">
+        <action
+            android:id="@+id/action_allSubmissionViewFragment_to_allSubmissionsListFragment"
+            app:destination="@id/allSubmissionsListFragment" />
+        <argument
+            android:name="notificationId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/SendNotificationFragment"
+        android:name="com.ardgahgroup.usterka.ui.newSubmission.sendResult.SendSubmissionResultFragment"
+        android:label="@string/new_submission_frame_title"
+        tools:layout="@layout/fragment_send_notification">
+        <action
+            android:id="@+id/action_wrongSendNotificationFragment_to_newSubmission"
+            app:destination="@id/newSubmission" />
+        <argument
+            android:name="check"
+            app:argType="boolean" />
+    </fragment>
+
+</navigation>

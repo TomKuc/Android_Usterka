@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/newSubmission"
+        android:icon="@drawable/ic_menu_new_submission"
+        android:title="@string/report_submission_menu_title" />
+    <item
+        android:id="@+id/mySubmissions"
+        android:icon="@drawable/ic_menu_my_submissions"
+        android:title="@string/my_submissions_menu_title" />
+    <item
+        android:id="@+id/allSubmissions"
+        android:icon="@drawable/ic_menu_all_submissions"
+        android:title="@string/all_submissions_menu_title" />
+</menu>
